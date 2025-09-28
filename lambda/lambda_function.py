@@ -3,18 +3,16 @@ import json
 from decimal import Decimal
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('VisitorCounter')
+table = dynamodb.Table('visitors')
 
-# Função para converter Decimal em int
 def decimal_default(obj):
     if isinstance(obj, Decimal):
         return int(obj)
     raise TypeError
 
 def lambda_handler(event, context):
-    # Incrementa o contador
     response = table.update_item(
-        Key={'id': 'visitor'},
+        Key={'id': 'visitor-count'},
         UpdateExpression='ADD visits :inc',
         ExpressionAttributeValues={':inc': 1},
         ReturnValues='UPDATED_NEW'
@@ -28,5 +26,5 @@ def lambda_handler(event, context):
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': 'https://pedrobortolini.com.br/'
         },
-        'body': json.dumps({'visits': visits}, default=decimal_default)  # usa a função de conversão
+        'body': json.dumps({'visits': visits}, default=decimal_default)  
     }

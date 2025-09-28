@@ -1,0 +1,27 @@
+# Arquivos de estado locais
+*.tfstate
+*.tfstate.*
+
+# Arquivos de log de crash
+crash.log
+crash.*.log
+
+# Exclui a pasta .terraform que contém os binários dos provedores
+.terraform/
+
+# Exclui o arquivo de lock de versões de provedores
+.terraform.lock.hcl
+
+# Arquivos de variáveis que podem conter segredos
+*.tfvars
+*.tfvars.json
+
+# Arquivos de configuração de override
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Configurações de CLI
+.terraformrc
+terraform.rc
