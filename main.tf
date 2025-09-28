@@ -69,11 +69,11 @@ resource "aws_apigatewayv2_api" "http_api" {
   name          = "crc-api"
   protocol_type = "HTTP"
 
-  cors_configuration {
-    allow_methods = ["GET"]
-    allow_origins = ["https://pedrobortolini.com.br"] 
-    allow_headers = ["content-type"]
-  }
+cors_configuration {
+  allow_methods = ["GET"]
+  allow_origins = ["*"]
+  allow_headers = ["content-type"]
+}
 }
 
 
