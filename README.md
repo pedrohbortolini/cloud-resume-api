@@ -1,34 +1,33 @@
 # ⚡ Cloud Resume Challenge – Backend
 
-🔗 Integrado ao site: [pedrobortolini.com.br](https://pedrobortolini.com.br)
+🔗 Integrated with the website: [pedrobortolini.com.br](https://pedrobortolini.com.br)
 
-Este projeto faz parte do **Cloud Resume Challenge**, onde desenvolvi a segunda etapa do desafio: a criação de uma **API serverless** para registrar e exibir o número de visitantes do site.
-
----
-
-## 🚀 Tecnologias utilizadas
-
-* **AWS Lambda (Python)** – função que processa requisições e interage com o banco
-* **Amazon DynamoDB** – banco NoSQL que armazena o contador de visitas
-* **Amazon API Gateway** – expõe a Lambda como uma API HTTP pública
-* **JavaScript (frontend)** – consome a API e atualiza o contador no site
+This project is part of the **Cloud Resume Challenge**, where I developed the second stage of the challenge: creating a **serverless API** to record and display the number of website visitors.
 
 ---
 
-## 📌 Funcionalidades
+## 🚀 Technologies Used
 
-* Incremento automático de visitas a cada acesso do site
-* Contador armazenado de forma persistente no DynamoDB
-* Resposta em **JSON** consumida pelo frontend
-* Configuração de **CORS** para aceitar chamadas apenas do domínio `pedrobortolini.com.br`
+* **AWS Lambda (Python)** – function that processes requests and interacts with the database
+* **Amazon DynamoDB** – NoSQL database that stores the visit counter
+* **Amazon API Gateway** – exposes the Lambda function as a public HTTP API
+* **JavaScript (frontend)** – consumes the API and updates the counter on the website
 
 ---
 
-## 🔄 Fluxo de funcionamento
+## 📌 Features
 
-1. O usuário acessa meu site.
-2. O **JavaScript** faz uma requisição `POST` para o **API Gateway**.
-3. O API Gateway invoca a **função Lambda**.
-4. A Lambda atualiza o contador no **DynamoDB** e retorna o valor atualizado.
-5. O **frontend** mostra em tempo real o número de visitantes.
+* Automatic increment of visits on each website access
+* Persistent counter storage in DynamoDB
+* **JSON** response consumed by the frontend
+* **CORS** configuration restricted to the domain `pedrobortolini.com.br`
 
+---
+
+## 🔄 Workflow
+
+1. The user accesses my website.
+2. The **JavaScript** sends a `POST` request to the **API Gateway**.
+3. The API Gateway triggers the **Lambda function**.
+4. The Lambda updates the counter in **DynamoDB** and returns the updated value.
+5. The **frontend** displays the real-time visitor count.
